@@ -320,6 +320,8 @@ module.exports = function(SIP, environment) {
         this.logger.log('user requested startup...');
         if (this.status === C.STATUS_INIT) {
             // C.W. added for UAS support
+            this.logger.log('do UAS ? ' + this.configuration.doUAS);
+
             if (!this.configuration.doUAS) {
                 server = this.getNextWsServer();
                 new SIP.Transport(this, server);

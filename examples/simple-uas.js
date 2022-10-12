@@ -42,7 +42,7 @@ const server = new SIPUDP.UA({
 })
 
 server.on('connected', () => {
-  console.log('SIP server started')
+  console.log('SIP server started test')
 })
 
 server.on('disconnected', () => {
