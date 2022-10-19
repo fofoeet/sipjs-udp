@@ -72,7 +72,8 @@ function makeCall() {
             constraints: {
                 audio: true,
                 video: false
-            }
+            },
+            inviteWithoutSdp: true
         }
     });
     session.on("accepted", function (data) {
