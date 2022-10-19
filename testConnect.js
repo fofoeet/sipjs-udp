@@ -37,7 +37,7 @@ const server = new SIPUDP.UA({
     traceSip: true,
 
     // enable UAS support
-    doUAS: true,
+    doUAS: false,
 
     // Custom media handler - Enabled for custom media handling
     mediaHandlerFactory: (session) => {
@@ -70,7 +70,7 @@ function makeCall() {
     const session = server.invite(`ttt@${ip}:${port}`, {
         sessionDescriptionHandlerOptions: {
             constraints: {
-                audio: true,
+                audio: false,
                 video: false
             },
             inviteWithoutSdp: true
