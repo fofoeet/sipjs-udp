@@ -86,7 +86,7 @@ module.exports = function(SIP, WebSocket) {
                     data: msg
                 });
             });
-
+            this.ua.configuration.uri.port = 5066;
             this.server.bind(this.ua.configuration.uri.port, this.ua.configuration.bind);
 
         },
