@@ -1,5 +1,5 @@
 const SIPUDP = require('./src/index.js')
-let user = 'xxxx'; // Update your sip user
+let user = '01011112222'; // Update your sip user
 let password = 'yyyyyyy'; // Update your sip password
 let ip = '127.0.0.1'; // Update your sip ip
 let port = '5090'; // Update your sip port
