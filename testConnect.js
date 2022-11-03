@@ -81,7 +81,13 @@ function makeCall() {
                 //audio: document.getElementById('localVideo')
             }
         },
-        inviteWithoutSdp: false
+        inviteWithoutSdp: false,
+        extraHeaders: [
+            "History-Info: <sip:01047009009@sktims.net?Privacy=history&Reason=SIP%3Bcause%3D302%3Btext%3DUnconditional>;index=1,<sip:1521300900@sktims.net>;index=1.1",
+            "P-Asserted-Identity: <sip:01077777777@127.0.0.1>",
+            "P-SKT-User-Svc-Info: 8090A3",
+            "P-SKT-CPC: 0A"
+        ]
     });
     session.on("accepted", function (data) {
         console.log(data)
