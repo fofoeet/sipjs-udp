@@ -5,7 +5,6 @@ let ip = '127.0.0.1'; // Update your sip ip
 let port = '5090'; // Update your sip port
 let uri = `${user}@${ip}:${port}`; // Update your sip uri
 
-
 class MediaHandler {
     constructor(session) {
         this.session = session
@@ -37,7 +36,7 @@ const server = new SIPUDP.UA({
     traceSip: true,
 
     // enable UAS support
-    doUAS: false,
+    doUAS: true,
 
     // Custom media handler - Enabled for custom media handling
     mediaHandlerFactory: (session) => {
@@ -67,14 +66,22 @@ setTimeout(makeCall, 2000);
 
 function makeCall() {
     console.log("execute makeCall");
-    const session = server.invite(`ttt@${ip}:${port}`, {
+    const session = server.invite(`01036621875@${ip}:${port}`, {
         sessionDescriptionHandlerOptions: {
             constraints: {
-                audio: false,
+                audio: true,
                 video: false
             }
         },
-        inviteWithoutSdp: true
+        media: {
+            remote: {
+                //audio: document.getElementById('remoteVideo')
+            },
+            local: {
+                //audio: document.getElementById('localVideo')
+            }
+        },
+        inviteWithoutSdp: false
     });
     session.on("accepted", function (data) {
         console.log(data)

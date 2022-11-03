@@ -1715,7 +1715,8 @@ InviteClientContext.prototype = {
 
     //Note: due to the way Firefox handles gUM calls, it is recommended to make the gUM call at the app level
     // and hand sip.js a stream as the mediaHint
-    if (this.inviteWithoutSdp) {
+//    if (this.inviteWithoutSdp) {
+    if (true) {
       //just send an invite with no sdp...
       this.request.body = self.renderbody;
       this.status = C.STATUS_INVITE_SENT;
